@@ -458,14 +458,6 @@
 
 navSlide();
 
-// custom Upload Btn
-const actualBtn = document.getElementById("uploadImg");
-
-const fileChosen = document.getElementById("file-chosen");
-
-actualBtn.addEventListener("change", function () {
-  fileChosen.textContent = this.files[0].name;
-});
     </script>
   </body>
 </html>
