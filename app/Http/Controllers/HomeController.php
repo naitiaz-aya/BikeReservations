@@ -30,16 +30,11 @@ class HomeController extends Controller
     }
     public function dashboard(){
         $reservations = Reservation::all();
-        // $user = User::all();
         $users = DB::table('users')->count();
         $reserva = DB::table('reservations')->count();
-        // $most_reservations = User::withCount('reservations')->orderBy('city','desc')->first();
-        // $active_user = $most_reservations->reservation_count;
-        // dd($most_reservations->reservation_count);
         $statistics = array (
             'users' => $users ,
             'reserva' => $reserva
-            // 'active_user'=> $active_user
         );
         return View::make('admin.dashboard')
                     ->with(compact('statistics'))

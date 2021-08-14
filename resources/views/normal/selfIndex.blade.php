@@ -120,7 +120,7 @@
                             @csrf
                                 @method('DELETE')
                             <button type="submit" name="submit" value="{{$reservation->id}}" rel="tooltip" class="btn btn-danger btn-icon btn-sm">
-                              <i class="fa fa-times"></i>
+                            <box-icon name='x-circle'></box-icon></box-icon>
                             </button>
                         </form>
                       </div>

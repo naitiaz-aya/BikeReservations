@@ -180,7 +180,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                            <label for="price">Text</label>
+                            <label for="price">Price</label>
                                 <input type="text" min="0" name="price" id="price" class="form-control"  readonly/>
                             </div>
                           

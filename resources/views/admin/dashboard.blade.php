@@ -21,82 +21,315 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>   
     <style>
-           body{
-            color: #1a202c;
-            text-align: left;
-            background-color: #e2e8f0;     
-            /* background-color: #EFF2FF;     */
+       body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            font-family:"Segoe UI" ;
+            box-sizing: border-box;
+            line-height: 1;
+            background-color: #e2e8f0;
            }
-            :root{
-            --main-bg-color: #005A8D;
-            --main-text-color: #fffff;
-            --second-text-color: #EFF2FF;  
-            --second-bg-color: #022E57;  
+           aside, section {
+            display: block;
             }
-            .primary-text{
-            color: var(--main-text-color);
+            ol,
+            ul {
+            list-style: none;
             }
-            .second-text{
-            color: var(--second-text-color);
+            table {
+            border-collapse: collapse;
+            border-spacing: 0;
             }
-            .primary-bg{
-            color: var(--main-bg-color);
-            }
-            .second-bg{
-            color: var(--second-bg-color);
-            }
-            .rounded-full{
-            border-radius :100%;
-            }
-            .wrapper {
-            overflow-x: hidden;
-            }
-            .sidebar{
-                background: #022E57;
-            }
-            .sidebar{
-                min-height: 100vh;
-                margin-left: -15rem;
-                transition: margin 0.25s ease-out;
-            }
-            .sidebar-heading{
-            padding: 0.875rem 1.25rem ;
-            font-size: 1.2rem;
-            }
-            .list-group{
-            width: 15rem; 
-            }
-            .page-content-wrapper{
-            min-width: 85%;
-            }
-            .wrapper .toggled{
-            margin-left: 0;
-            }
-            .menu-toggle{
-            cursor: pointer;
-            }
-            .list-group-item{
-            border: none;
-            padding: 20px 30px;
+            a {
+            color: inherit;
+            text-decoration: none;
             }
             
-            .btn-home{
-                color:#EFF2FF;
+            main.container {
+                display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-left: 20%;
+            max-width: 1520px;
+            
             }
-            @media (min-width: 768px) {
-                .sidebar{
+         
+            h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-align: center;
+            color: #0101E1;
+            margin-bottom: 1rem;
+            }
+            aside {
+                transition: 300ms;
+                position: fixed;
+                padding-top: 30px;
+                height: 100%;
+                background-color:#2E4DEC;   
+                color: white;
+                padding: 30px;
+                width: 15%;
+                z-index: 1;
+            }
+            .logo {
+                margin: 0 auto;
+                width: 100%;
+            }
+            aside .side-menu {
+            position: relative;
+            margin-top: 100px;
+            }
+            h2 {
+                font-size: 1.1rem;
+                line-height: 1.1;
+                margin-left: 25px;
+                align-self: center;
+                font-weight: 500;
+            }
+            @media (max-width: 480px) {
+                aside .side-menu {
+                    right: 0;
+                    left: 0;
                     margin-left: 0;
+                }
+            }
+            
+            .burger {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            }
+
+            .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #0101E1;
+            margin: 5px;
+
+            transition: all 0.3s ease;
+            }
+            .side-menu.side-active {
+            transform: translateX(0%);
+            }
+            .aside-active {
+            width: 100%;
+            }
+            .burger.toggle div {
+            background-color: #EFF2FF;
+            }
+            .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .toggle .line2 {
+            opacity: 0;
+            }
+
+            .toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .btn {
+            background: #0fe430;
+            color: white;
+            padding: 10px 30px;
+            font-weight: 500;
+            border-radius: 5px;
+            }
+            
+            section {
+                transition: 300ms;
+                margin-left: 45%;
+                padding-left: 50px;
+                margin-right: 90px;
+                padding-top: 20px;
+                background-color: #e2e8f0;
+            }
+
+            @media (max-width: 480px) {
+                section {
+                    padding-left: 0;
                     
                 }
-                .page-content-wrapper{
-                    min-width: 0;
-                    width: 100%;
-                }
-                .wrapper .toggled{
-                    margin-left: -15rem;
-                }
-            
             }
+            section .username {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            section .username h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-right: 10px;
+            color: #0101E1;
+            }
+
+            section .username .avatar {
+            width: 50px;
+            height: 50px;
+            }
+            section .username .avatar img {
+            width: 100%;
+            height: 100%;
+                object-fit: cover;
+            border-radius: 50%;
+            }
+            section .reservation table {
+            border-collapse: separate;
+            margin-top: 10px;
+            margin-left: 5%;
+            width: 100%;
+            text-align: center;
+            border-spacing: 0 8px;
+            border-radius: 8px;
+
+            }
+            
+            section .reservation table .headtable{
+                background-color: #0101E1;
+                height: 60px;
+
+            }
+            section .reservation table .rtable{
+                background-color: #fff;
+                height: 60px;
+
+            }
+
+            section .reservation table th {
+            color: #EFF2FF;
+            }
+
+            section .reservation table th,
+            section .reservation table td {
+            font-weight: 500;
+            vertical-align: middle;
+            padding: 10px 0;
+            }
+
+
+            section .reservation table th a,
+            section .reservation table td a {
+            display: block;
+            }
+            @media (max-width: 480px) {
+                section .reservation table tr:not(:first-child) td {
+                    padding: 20px 0;
+                }
+            }
+            @media (max-width: 480px) {
+            section .reservation table tr:not(:first-child) td:last-child {
+                display: none;
+            }
+            }
+            section .products table th {
+            color: #0101E1;
+            }
+            section .reservation table tr:not(:first-child) td:last-child {
+                background: #0101E1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                justify-items: center;
+                height: 60pxgi;
+            }
+            section .reservation table th:first-child,
+            section .reservation table td:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            }
+            @media (max-width: 480px) {
+            section .reservation table th:nth-child(2),
+            section .reservation table td:nth-child(2) {
+                display: none;
+            }
+            }
+
+            @media (max-width: 480px) {
+            section .reservation table th:nth-child(3),
+            section .reservation table td:nth-child(3) {
+                display: none;
+            }
+            }
+
+            @media (max-width: 480px) {
+            section .reservation table th:nth-child(6),
+            section .reservation table td:nth-child(6) {
+                display: none;
+            }
+            }
+
+            @media (max-width: 480px) {
+            section .reservation table th:nth-child(7),
+            section .reservation table td:nth-child(7) {
+                display: none;
+            }
+            }
+            @media (max-width: 480px) {
+            section .reservation table th:nth-child(8),
+            section .reservation table td:nth-child(8) {
+                display: none;
+            }
+            }
+            
+            section .reservation table th:nth-last-child(2) > div,
+            section .reservation table td:nth-last-child(2) > div {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            }
+
+            section .reservation table th:last-child,
+            section .reservation table td:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            }
+                        @media screen and (max-width: 480px) {
+                body {
+                    overflow-x: hidden;
+                }
+                aside {
+                    width: 0%;
+                    padding: 0;
+                }
+                .sidebar .logo {
+                    visibility: hidden;
+                }
+
+                .side-menu {
+                    position: fixed;
+                    
+                    overflow: hidden;
+                    height: 100vh;
+                    top: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    width: 100%;
+                    transform: translateX(-100%);
+                    transition: transform 0.5s ease-out;
+                }
+
+                    .burger {
+                        display: block;
+                        cursor: pointer;
+                        color: white;
+                }
+                }
+
 
     </style>
 </head>
@@ -104,30 +337,29 @@
     <div id="app">
      
 
-        <main>
-
-          <div class="d-flex wrapper" id="wrapper">
-            <!-- Sidebar-->
-
-            <div class="sidebar  primary-bg" id="sidebar">
-
-                  <div class="sidebar-heading text-center py-2 primary-text fs-4 fw-bold text-uppercase border-bottom">
-                  <a href="/home"><button class="btn btn-home"> <box-icon name='cycling' ></box-icon>    SOTRAYA</button></a> 
-                  </div>
-
-                  <div class="list-group list-group-flush my-3">
-
-                  <a href="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold ">
-                  <box-icon name='dashboard' type='solid'  ></box-icon> Dashboard
-                  </a>
-                  <a href="/users" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                  <box-icon name='user'  ></box-icon> Users
-                  </a>
-                  <a href="/statistics" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                  <box-icon name='bar-chart'  ></box-icon> Statistic
-                  </a>
-
-                  @guest
+     
+      <aside class="sidebar">
+      <div class="logo">
+      
+                  <a href="/home"> <h1>SOTRAYA</h1></a> 
+                  
+      </div>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <div class="side-menu">
+      <a href="/dashboard" >
+                  <box-icon name='dashboard' type='solid' color="#EFF2FF" ></box-icon><h2>Dashboard</h2>
+       </a>
+       <a href="/users" >
+                  <box-icon name='user' color="#EFF2FF" ></box-icon> <h2>Users</h2>
+        </a>
+       <a href="/statistics" >
+                  <box-icon name='bar-chart' color="#EFF2FF" ></box-icon> <h2>Statistic</h2>
+      </a>
+      @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -146,7 +378,7 @@
 
                             <div class="menu menu-right" aria-labelledby="navbar">
                                 <a  href="{{ route('logout') }}">
-                                <box-icon name='exit' type='solid'  ></box-icon>{{ __('Logout') }}
+                                <box-icon name='exit' type='solid' color="#EFF2FF" ></box-icon>{{ __('Logout') }}
                                 </a> 
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -155,137 +387,52 @@
                             </div>
                         </li>
                         @endguest
-                  
-
-                  </div>
-            </div>
-             <!--  End Sidebar-->
-
-             <div class="page-content-wrapper">
-               <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-2 px-4">
-                 <div class="d-flex align-items-center">
-                    <i class="bx bx-align-right menu-toggle"id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Dashboard</h2>
-                 </div>
-                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportContent"
-                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                 </button>
-                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                   <ul class="navbar-nav ms-2 mb-lg-0">
-                     <li class="nav-item">
-                       <a href="{{ route('profile')}}" class="nav-link  second-text ms-auto fw-bold" id="navbar" 
+       
+      </div>
+    </aside>
+    <section class="container">
+      <div class="username">
+      <a href="{{ route('profile')}}" class="nav-link  second-text ms-auto fw-bold" id="navbar" 
                        d aria-expanded="false">
-                       <i class='bx bx-face' ></i>Hi, {{ Auth::user()->name }}
+                      <h3> <i class='bx bx-face' ></i>Hi, {{ Auth::user()->name }}</h3>
                       </a>
-                     
-                     
-                     </li>
-                   </ul>
-                 </div>
-
-              </nav>
-
-
-                <div class="container-fluid px-4">
-                  
-                    <div class="row justify-content-center">
+        <div class="avatar">
+          <img src="https://resolution-conflits.protegez-vous.ca/wp-content/uploads/2020/05/testimony.png" alt="Avatar" />
+        </div>
+      </div>
+      
+      <div class="reservation">
+        <table>
+          <tr class="headtable">
+            <th>Id</th>
+            <th>Name</th>
+            <th>D.T Start </th>
+            <th>Time</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>Payment</th>
+            <th>Price</th>
+            <th>View</th>
+          </tr>
+          @foreach ($reservations as $reservation)
+            <tr class="rtable">
+                <td>#{{$reservation->id}}</td>
+                <td>{{$reservation->user->name}}</td>
+                <td>{{$reservation->dt_start}}</td>
+                <td>{{$reservation->time_res}}H</td>
+                <td>{{$reservation->city}}</td>
+                <td>{{$reservation->street}}</td>
+                <td>{{$reservation->payment}}</td>
+                <td>{{$reservation->price}}$</td>
+                <td><a href="{{ route('showReservation', ['id' => $reservation->id])}}"><box-icon name='show' color='#fff' ></box-icon></a></td>
+            </tr>
+            @endforeach
           
+        </table>
+      </div>
+    </section>
           
-          
-                                    <div class="col-xl-3 col-md-6 mb-4">
-                                        <div class="card border-left-success shadow h-100 py-2">
-                                            <div class="card-body">
-                                                <div class="row no-gutters align-items-center ">
-                                                    <div class="col mr-2">
-                                                        <div class="text-xs font-weight-bold text-success text-uppercase  mb-1">
-                                                        Reserved bikes</div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$statistics['reserva']}}</div>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-6 mb-4">
-                                        <div class="card border-left-success shadow h-100 py-2">
-                                            <div class="card-body">
-                                                <div class="row no-gutters align-items-center ">
-                                                    <div class="col mr-2">
-                                                        <div class="text-xs font-weight-bold text-success text-uppercase  mb-1">
-                                                        All users </div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$statistics['users']}}</div>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-          
-                              
-          
-                                    <div class="col-xl-3 col-md-5 mb-4">
-                                        <div class="card border-left-warning shadow h-100 py-2">
-                                            <div class="card-body">
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col mr-2">
-                                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                            Total of bikes </div>
-                                                        <div class="h5 mb-0 font-weight-bold text-gray-800">200</div>
-                                                    </div>
-                                                    <div class="col-auto">
-                                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                    </div>
-          
-                    <div class="container justify-content-center align-items-center">
-                              
-          
-          
-                              <div class="row">
-                              
-                                
-                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                              <thead>
-                                                                  <tr>
-                                                                      <th>Id</th>
-                                                                      <th>Name</th>
-                                                                      <th>D.T Start </th>
-                                                                      <th>Time</th>
-                                                                      <th>City</th>
-                                                                      <th>Street</th>
-                                                                      <th>Payment</th>
-                                                                      <th>Price</th>
-                                                                      <th>View</th>
-                                                                  </tr>
-                                                              </thead>
-                                                              
-                                                              <tbody>
-                                                              @foreach ($reservations as $reservation)
-                                                                  <tr>
-                                                                      <td>{{$reservation->id}}</td>
-                                                                      <td>{{$reservation->user->name}}</td>
-                                                                      <td>{{$reservation->dt_start}}</td>
-                                                                      <td>{{$reservation->time_res}}H</td>
-                                                                      <td>{{$reservation->city}}</td>
-                                                                      <td>{{$reservation->street}}</td>
-                                                                      <td>{{$reservation->payment}}</td>
-                                                                      <td>{{$reservation->price}}$</td>
-                                                                      <td><a href="{{ route('showReservation', ['id' => $reservation->id])}}">view</a></td>
-                                                                  </tr>
-                                                              @endforeach
-                                                              </tbody>
-                                                          </table>
-          
-                            </div>
-                    </div>
-              </div>
-             </div>
-          </div>
+              
           </main>
     </div>
       <!-- jQuery library -->
@@ -294,12 +441,31 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-        var el = document.getElementById("wrapper")
-        var toggleButton = document.getElementById("menu-toggle")
+        function navSlide() {
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".side-menu");
+  const aside = document.querySelector("aside");
 
-        toggleButton.onclick = function () {
-            el.classList.toggle("toggled")
-        }
+  burger.addEventListener("click", () => {
+    //Toggle Nav
+    nav.classList.toggle("side-active");
+
+    aside.classList.toggle("aside-active");
+    //Burger Animation
+    burger.classList.toggle("toggle");
+  });
+}
+
+navSlide();
+
+// custom Upload Btn
+const actualBtn = document.getElementById("uploadImg");
+
+const fileChosen = document.getElementById("file-chosen");
+
+actualBtn.addEventListener("change", function () {
+  fileChosen.textContent = this.files[0].name;
+});
     </script>
   </body>
 </html>

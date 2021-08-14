@@ -197,9 +197,9 @@ main{
 			<div class="detail">User ID: {{$reservation->user_id}}</div>
 		</div>
 		
-		<div class="centerItem bold">
+		<!-- <div class="centerItem bold">
 			<div class="item">ExtraCare Card #: *********1875</div>
-		</div>
+		</div> -->
 		
 		
 		<div class="paymentDetails bold">

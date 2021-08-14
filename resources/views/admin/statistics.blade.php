@@ -23,72 +23,51 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>   
     <style>
          body{
+            font-family: 'Segoe UI';
             color: #1a202c;
             text-align: left;
             background-color: #e2e8f0;    
         }
-     .card {
-    background-color: #fff;
-    border-radius: 10px;
-    border: none;
-    position: relative;
-    margin-bottom: 30px;
-    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
-}
-.l-bg-cherry {
-    background: linear-gradient(to right, #493240, #f09) !important;
-    color: #fff;
-}
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            border: none;
+            position: relative;
+            margin-bottom: 30px;
+            box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+            background-color: #2B7DE9;
+            color: #EFF2FF;
+            font-family: 'Segoe UI';
+        }
+        h1{
+            color: #0101E1;
+            
+            font-weight: 900;
+            /* height: 30vh; */
+            padding: 0 ;
+            font-size: 60px;
+            /* opacity: .1; */
+            /* padding-top: 80px; */
+        }
 
-.l-bg-blue-dark {
-    background: linear-gradient(to right, #373b44, #4286f4) !important;
-    color: #fff;
-}
+        .card  {
+            font-size: 110px;
+        }
 
-.l-bg-green-dark {
-    background: linear-gradient(to right, #0a504a, #38ef7d) !important;
-    color: #fff;
-}
-
-.l-bg-orange-dark {
-    background: linear-gradient(to right, #a86008, #ffba56) !important;
-    color: #fff;
-}
-
-.card  {
-    font-size: 110px;
-}
-
-.card .card-statistic-3 .card-icon {
-    text-align: center;
-    line-height: 50px;
-    margin-left: 15px;
-    color: #000;
-    position: absolute;
-    right: 0px;
-    top: 20px;
-    opacity: 0.1;
-}
-
-.l-bg-cyan {
-    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
-    color: #fff;
-}
-
-.l-bg-green {
-    background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
-    color: #fff;
-}
-
-.l-bg-orange {
-    background: linear-gradient(to right, #f9900e, #ffba56) !important;
-    color: #fff;
-}
-
-.l-bg-cyan {
-    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
-    color: #fff;
-}
+        .card .card-statistic-3 .card-icon {
+            text-align: center;
+            line-height: 50px;
+            margin-left: 15px;
+            color: #000;
+            position: absolute;
+            right: 0px;
+            top: 20px;
+            opacity: 0.1;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            }
     </style>
 </head>
 <body>
@@ -107,8 +86,8 @@
                     <ul class="navbar-nav mr-auto">
                     @auth
                             @if(Auth::user()->role == 'admin')
-                            <h5><a href="/users"class="justify-content-center" >Users</a></h5>
-                            <h5><a href="/dashboard"class="justify-content-center" >Dashboard</a></h5>                         
+                            <h5><a href="/users"class=" nav-link justify-content-center" >Users</a></h5>
+                            <h5><a href="/dashboard"class=" nav-link justify-content-center" >Dashboard</a></h5>                         
                             @endif
                     @endauth
                     <a href="{{ route('profile')}}" class="nav-link  second-text fw-bold" id="navbar" 
@@ -158,7 +137,7 @@
     <div class="row justify-content-center">
         <h1 class="row justify-content-center mb-3">The statistics</h1>
         <div class="col-xl-3 col-lg-6 ">
-            <div class="card l-bg-blue-dark">
+            <div class="card ">
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
                     <div class="mb-4">
@@ -175,7 +154,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-lg-6">
-            <div class="card l-bg-green-dark">
+            <div class="card ">
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-ticket-alt"></i></div>
                     <div class="mb-4">
@@ -194,7 +173,7 @@
             </div>
         </div>
         <div class="col-xl-3 col-lg-6">
-            <div class="card l-bg-orange-dark">
+            <div class="card ">
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-bicycle"></i></div>
                     <div class="mb-4">

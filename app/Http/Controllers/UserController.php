@@ -49,7 +49,7 @@ class UserController extends Controller
         //
         $user = User::find($id);
         // Load user/createOrUpdate.blade.php view
-        return view('users.edit');
+        return view('users.edit', ['users' => $user]);
 
     }
 
