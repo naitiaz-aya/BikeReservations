@@ -240,13 +240,13 @@ font-size: 80px;
 
 }
 .c2,.c4{
-  background-color:    #6B83FF;
+  background-color:    #C2CAEF;
 }
 
 /* -----------------seconde section----------------------*/
 
 .content-2{
-  background-color:#6B83FF;
+  background-color:#C2CAEF;
   width: 100%;
   
   margin-top: 100px;
@@ -730,7 +730,7 @@ align-items: center;
             </div>
            
             <div class="content-2-2">
-              <h2>We are Trusted Name in Car Rent Services
+              <h2>We are Trusted Name in bike free service
               </h2>
               <h6> Used by thousands of People Every Month!
               </h6>
