@@ -27,7 +27,122 @@
             color: #1a202c;
             text-align: left;
             background-color: #e2e8f0;    
+         }
+        .start-header {
+            opacity: 1;
+            transform: translateY(0);
+            padding: 20px 0;
+            box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);
+            transition : all 0.3s ease-out;
         }
+        .start-header.scroll-on {
+            box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
+            padding: 10px 0;
+            transition : all 0.3s ease-out;
+        }
+        .start-header.scroll-on .navbar-brand img{
+            height: 20px;
+            transition : all 0.3s ease-out;
+        }
+        .navigation-wrap{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition : all 0.3s ease-out;
+        }
+        .navbar{
+            padding: 0;
+        }
+        .navbar-brand img{
+            height: 28px;
+            width: auto;
+            display: block;
+            transition : all 0.3s ease-out;
+        }
+        .navbar-toggler {
+            float: right;
+            border: none;
+            padding-right: 0;
+        }
+        .navbar-toggler:active,
+        .navbar-toggler:focus {
+            outline: none;
+        }
+        .navbar-light .navbar-toggler-icon {
+            width: 24px;
+            height: 17px;
+            background-image: none;
+            position: relative;
+            border-bottom: 1px solid #000;
+            transition: all 300ms linear;
+        }
+        .navbar-light .navbar-toggler-icon:after, 
+        .navbar-light .navbar-toggler-icon:before{
+            width: 24px;
+            position: absolute;
+            height: 1px;
+            background-color: #000;
+            top: 0;
+            left: 0;
+            content: '';
+            z-index: 2;
+            transition: all 300ms linear;
+        }
+        .navbar-light .navbar-toggler-icon:after{
+            top: 8px;
+        }
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+            transform: rotate(45deg);
+        }
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+            transform: translateY(8px) rotate(-45deg);
+        }
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            border-color: transparent;
+        }
+        .nav-link{
+            color: #212121 !important;
+            font-weight: 500;
+            transition: all 200ms linear;
+        }
+        .nav-item:hover .nav-link{
+            color: #0101E1 !important;
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0 !important;
+            display: inline-block;
+        }
+        .nav-item:after{
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            content: '';
+            background-color: #0101E1;
+            opacity: 0;
+            transition: all 200ms linear;
+        }
+        .nav-item:hover:after{
+            bottom: 0;
+            opacity: 1;
+        }
+        .nav-item.active:hover:after{
+            opacity: 0;
+        }
+        .nav-item{
+            position: relative;
+            transition: all 200ms linear;
+            margin-left: 15px;
+        }
+        .col-md-12  {
+            margin-top: 40px;
+        }
+
         .card {
             background-color: #fff;
             border-radius: 10px;
@@ -41,13 +156,9 @@
         }
         h1{
             color: #0101E1;
-            
             font-weight: 900;
-            /* height: 30vh; */
-            padding: 0 ;
+            padding: 20px ;
             font-size: 60px;
-            /* opacity: .1; */
-            /* padding-top: 80px; */
         }
 
         .card  {
@@ -72,68 +183,87 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <header class="main-header">
+        <div class="navigation-wrap bg-light start-header start-style">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'SOTRAYA') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                    @auth
-                            @if(Auth::user()->role == 'admin')
-                            <h5><a href="/users"class=" nav-link justify-content-center" >Users</a></h5>
-                            <h5><a href="/dashboard"class=" nav-link justify-content-center" >Dashboard</a></h5>                         
-                            @endif
-                    @endauth
-                    <a href="{{ route('profile')}}" class="nav-link  second-text fw-bold" id="navbar" 
-                       d aria-expanded="false">
-                       <i class='bx bx-face' ></i> Hi, {{ Auth::user()->name }}
-                      </a>
-                    </ul>
-            
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                        <li class="nav-item " onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-md navbar-light">
+                            <div class="container">
+                            <a class="navbar-brand" href="{{ url('/home') }}" target="_blank"><img src="https://www.seekpng.com/png/full/28-287336_welcome-road-bike-vector-png.png" alt="logo"></a>	
                             
-                            <div class="menu menu-right">
-                                <a class="item" href="{{ route('logout') }}">
-                                    {{ __('Logout') }}
-                                </a> 
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto ">
+                                    
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="{{ url('/home') }}">Home</a>
+                                    </li>
+                                    @auth
+                                        @if(Auth::user()->role == 'admin')
+                                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                                <a class="nav-link" href="/users">Users</a>
+                                            </li>
+                                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                            <a class="nav-link" href="/dashboard">Dashboard</a>
+                                            </li>
+                                        @endif
+                                    @endauth
+                                    
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    </ul>
+                                            <ul class="navbar-nav ms-auto">
+                                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                                    <a class="nav-link ms-auto" href="{{ route('profile')}}"><i class='bx bx-face' ></i> Hi, {{ Auth::user()->name }}</a>
+                                                </li>
+                                            <!-- Authentication Links -->
+                                            @guest
+                                                @if (Route::has('login'))
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                                    </li>
+                                                @endif
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
+                                                @if (Route::has('register'))
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                    </li>
+                                                @endif
+                                            @else
+                                            <li class="nav-item " onclick="event.preventDefault();
+                                                                        document.getElementById('logout-form').submit();">
+                                                
+                                                <div class="menu menu-right">
+                                                    <a class="item" href="{{ route('logout') }}">
+                                                        {{ __('Logout') }}
+                                                    </a> 
+
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                        @csrf
+                                                    </form>
+                                                </div>
+                                            </li>
+                                            @endguest
+                                        </ul>
+                                    </li>
+                                
                             </div>
-                        </li>
-                        @endguest
-                    </ul>
+                            </div>
+                        </nav>		
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
+    </header>
+
+        
 
         <main class="py-4">
 
-<div class="col-md-12 ">
+<div class="col-md-12 con ">
     <div class="row justify-content-center">
         <h1 class="row justify-content-center mb-3">The statistics</h1>
         <div class="col-xl-3 col-lg-6 ">

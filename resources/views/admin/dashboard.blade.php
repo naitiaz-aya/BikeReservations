@@ -240,7 +240,7 @@
                 justify-content: center;
                 align-items: center;
                 justify-items: center;
-                height: 60pxgi;
+                height: 60px;
             }
             section .reservation table th:first-child,
             section .reservation table td:first-child {
@@ -435,28 +435,28 @@
               
           </main>
     </div>
-      <!-- jQuery library -->
+    <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-        function navSlide() {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".side-menu");
-  const aside = document.querySelector("aside");
+       function navSlide() {
+            const burger = document.querySelector(".burger");
+            const nav = document.querySelector(".side-menu");
+            const aside = document.querySelector("aside");
 
-  burger.addEventListener("click", () => {
-    //Toggle Nav
-    nav.classList.toggle("side-active");
+            burger.addEventListener("click", () => {
+                //Toggle Nav
+                nav.classList.toggle("side-active");
 
-    aside.classList.toggle("aside-active");
-    //Burger Animation
-    burger.classList.toggle("toggle");
-  });
-}
+                aside.classList.toggle("aside-active");
+                //Burger Animation
+                burger.classList.toggle("toggle");
+            });
+        }
 
-navSlide();
+        navSlide();
 
     </script>
   </body>
