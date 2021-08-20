@@ -13,15 +13,17 @@ class UserController extends Controller
     //
     public function index()
     {
+      
         $users = User::all();
         return view('users.index', ['users' => $users]);
+    
     }
 
-    public function profile(){
-
-        
+    public function profile()
+    {
 
         return View::make('users.profile');
+  
     }
 
     /**
@@ -32,7 +34,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        
         $users = User::all();
         return view('users.index', ['users' => $users]);
     
@@ -46,7 +48,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        
         $user = User::find($id);
         // Load user/createOrUpdate.blade.php view
         return view('users.edit', ['users' => $user]);
@@ -62,11 +64,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request->role);
+        
         $user = User::find($id);
         $user->role = $request->role;
         $user->save();
         return redirect('users');
+    
     }
 
     /**
@@ -84,6 +87,7 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->back();
+    
     }
 
 }

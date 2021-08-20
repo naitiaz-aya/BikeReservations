@@ -16,7 +16,9 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware('auth');
+    
     }
 
     /**
@@ -26,9 +28,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         return view('home');
+    
     }
-    public function dashboard(){
+
+    public function dashboard()
+    {
+
         $reservations = Reservation::all();
         $users = DB::table('users')->count();
         $reserva = DB::table('reservations')->count();
@@ -41,15 +48,21 @@ class HomeController extends Controller
                     ->with('reservations',$reservations);
                     
     }
-    public function reserve(){
-        
-        
+
+    public function reserve()
+    {
+
         return view('normal.reservation');
+    
     }
-    public function ticket($id){
+
+    public function ticket($id)
+    {
+     
         $reservation = Reservation::find($id);
         
         return view('normal.ticket')->with('reservation',$reservation);
+    
     }
     
 }

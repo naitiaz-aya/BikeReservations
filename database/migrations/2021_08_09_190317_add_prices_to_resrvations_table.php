@@ -16,6 +16,7 @@ class AddPricesToResrvationsTable extends Migration
         Schema::table('reservations', function (Blueprint $table) {
             //
             $table->integer('price');
+            
         });
     }
 

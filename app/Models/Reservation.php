@@ -9,8 +9,12 @@ class Reservation extends Model
 {
     use HasFactory;
 
-    public function user(){
+    public function user()
+    {
+        
+        // l'inverse de la relation
         return $this->belongsTo('App\Models\User');
+    
     }
     
 }

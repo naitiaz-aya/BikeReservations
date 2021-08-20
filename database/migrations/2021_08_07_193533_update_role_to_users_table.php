@@ -14,7 +14,9 @@ class UpdateRoleToUsersTable extends Migration
     public function up()
     { 
         Schema::table('users', function (Blueprint $table) {
-        $table->string('role')->default('normal')->change();
+
+            $table->string('role')->default('normal')->change();
+        
         });
     }
 
